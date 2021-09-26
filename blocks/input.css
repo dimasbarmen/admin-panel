@@ -1,13 +1,17 @@
+:root {
+  --dark-blue: #459DF5;
+  --light-blue: #BAD8F5;
+  --red: #F53152;
+}
 .order {
   display: flex;
   flex-direction: column;
-  font-size: .8125rem;
+  font-size: .75rem;
   padding: 0.5rem 0;
   width: 16rem;
   height: 4.5rem;
 }
 .order__date {
-  
   font-family: 'Ubuntu', sans-serif;
   font-weight: normal;
   line-height: 1rem;
@@ -17,35 +21,35 @@
 .order__date-input {
   width: 100%;
   height: 2rem;
-  padding-left: 0.5rem;
-  border: 1px solid #459DF5;
-  color: #BAD8F5;
+  border: 1px solid var(--dark-blue);
   border-radius: .25rem;
+  padding-left: 0.5rem;
+}
+.order__date-input::placeholder {
+  color: var(--light-blue);
 }
 .order__date-input_incorrect {
-  border: 1px solid #F53152;
+  border: 1px solid var(--red);
   color: #000;
 }
 .order__date-input_disabled {
-  background-color: #BAD8F5;
+  background-color: var(--light-blue);
   color: #000;
 }
 .order__date-field {
   position: relative;
 }
-.img__locked {
+.order__locked-img {
   fill: #000;
-  width: 12px;
-  height: 14px;
+  width: 1rem;
   position: absolute;
   right: .6rem;
   top: .6rem;
 }
-.img__close {
+.order__clear-img {
   position: absolute;
-  stroke: #BAD8F5;
+  stroke: var(--light-blue);
   width: 1rem;
-  height: 1rem;
   top: .6rem;
   right: .5rem;
 }
