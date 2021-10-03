@@ -8,18 +8,25 @@
   <title>Checkbox</title>
 </head>
 <body>
-  <div class="check__wrapper">
-    <div class="check">
-      <span class="check__box"></span>
-      <input class="check__input" type="checkbox">
-    </div>
-    <div class="check">
-      <span class="check__box check__box_checked"></span>
-      <svg class="check__img" viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
-      </svg>
-      <input class="check__input" type="checkbox" checked>
-    </div>
-  </div>
+
+  <form class="checkbox__form">
+    <div class="checkbox__container">
+      <input id="check1" class="checkbox__input" type="checkbox">
+      <label for="check1" class="checkbox__label">
+        <svg class="check__img" width="100%" height="auto"  viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
+        </svg>
+      </label>
+    </div>  
+    <div class="checkbox__container">
+      <input id="check2" class="checkbox__input" type="checkbox" checked>
+      <label for="check2" class="checkbox__label">
+        <svg class="check__img" width="100%" height="auto" viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z" stroke="none"/>
+        </svg>
+      </label>
+    </div> 
+  </form>
+  
 </body>
 </html>

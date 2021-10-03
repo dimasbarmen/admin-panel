@@ -8,18 +8,25 @@
   <title>Radio</title>
 </head>
 <body>
-  <div class="radio__wrapper">
-    <div class="radio">
-      <span class="radio__box"></span>
-      <input class="radio__input" type="radio">
-    </div>
-    <div class="radio">
-      <span class="radio__box radio__box_checked"></span>
-      <svg class="radio__img" viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="8" cy="8" r="4" stroke="none"/>
-      </svg>
-      <input class="radio__input" type="radio" checked>
-    </div>
-  </div>
+
+  <form class="radio__form">
+    <div class="radio__container">
+      <input id="radio1" name="radio" class="radio__input" type="radio">
+      <label for="radio1" class="radio__label">
+        <svg viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="4" stroke="none"/>
+          </svg>
+      </label>
+    </div>  
+    <div class="radio__container">
+      <input id="radio2" name="radio" class="radio__input" type="radio" checked>
+      <label for="radio2" class="radio__label">
+        <svg viewBox="0 0 16 16" fill="#8055FF" stroke="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="4" stroke="none"/>
+          </svg>
+      </label>
+    </div> 
+  </form>
+
 </body>
 </html>
