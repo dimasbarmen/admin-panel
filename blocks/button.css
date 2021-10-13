@@ -1,0 +1,86 @@
+:root {
+  --dark-blue: #459DF5;
+  --white: #fff;
+  --black: #000;
+}
+.button__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 24rem;
+}
+.button__form {
+  width: 8rem;
+}
+.button {
+  display: block;
+  width: 7rem;
+  height: 2rem;
+  position: relative;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  border: none;
+  border-radius: .25rem;
+  padding: .5rem 1rem .5rem 2.5rem;
+  margin-bottom: .5rem;
+  cursor: pointer;
+}
+.button__icon {
+  width: 1rem;
+  position: absolute;
+  stroke: var(--white);
+  top: .5rem;
+  left: .75rem;
+}
+.button__text {
+  display: block;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: .75rem;
+}
+.button_no-icon {
+  width: 5.5rem;
+  padding: .5rem 1rem;
+}
+.button_no-text {
+  width: 2rem;
+  padding: .5rem;
+}
+.button_no-text .button__icon {
+  position: static;
+}
+.button_transparent {
+  background-color: transparent;
+  color: var(--dark-blue);
+}
+.button__icon_transparent {
+  stroke: var(--dark-blue);
+}
+.button_disabled {
+  color: var(--black);
+  pointer-events: none;
+}
+.button__icon_disabled {
+  stroke: var(--black);
+}
+.button_small {
+  width: 5.75rem;
+  height: 1.5rem;
+  padding: .25rem .5rem .25rem 1.75rem;
+}
+.button_small .button__icon {
+  top: .25rem;
+  left: .5rem;
+}
+.button_small-no-icon {
+  width: 4.5rem;
+  height: 1.5rem;
+  padding: 0 .5rem;
+}
+.button_small-no-text {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+}
+.button_small-no-text .button__icon {
+  top: .25rem;
+  left: .25rem;
+}
