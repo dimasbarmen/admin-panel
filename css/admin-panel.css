@@ -1,0 +1,431 @@
+:root {
+  --dark-blue: #459DF5;
+  --light-blue: #BAD8F5;
+  --white: #fff;
+  --light-grey: #EBF0F5;
+  --grey: #E5E5E5;
+  --transparency: rgba(0, 0, 0, 0.15);
+  --black-shadow: rgba(0, 0, 0, 0.1);
+  --orange: #FF8C56;
+  --green: #0FB864;
+  --red: #F53152;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+input  {
+  outline: none;
+}
+svg {
+  width: 1rem;
+  cursor: pointer;
+}
+.container {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: .75rem;
+  line-height: 1rem;
+  padding: 2rem 3rem 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 7rem;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  border: none;
+  border-radius: .25rem;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+.button_page {
+  width: 1.5rem;
+  padding: .25rem .5rem;
+  margin-right: .25rem;
+}
+.button_transparent {
+  color: var(--dark-blue);
+  background-color: transparent;
+}
+.button_disabled {
+  cursor: default;
+}
+.button_switch {
+  width: 8.75rem;
+}
+.button_change {
+  justify-content: center;
+  width: 8.75rem;
+  padding: .25rem .5rem;
+  margin-right: 1rem;
+}
+.button_delete {
+  justify-content: center;
+  width: 5.5rem;
+  padding: .25rem .5rem;
+  background-color: var(--red);
+}
+.button_reset {
+  width: 9.25rem;
+}
+.button_apply {
+  width: 5.5rem;
+  padding: .5rem;
+}
+.button_dropdown {
+  justify-content: center;
+  width: 100%;
+  padding: .25rem 0;
+  margin-bottom: .5rem;
+}
+
+
+/* Header */
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.header__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  letter-spacing: -.2px;
+}
+.header__switch-light-icon,
+.table__body-status-icon-payment {
+  fill: var(--dark-blue);
+}
+
+
+/* Service */
+
+
+.service {
+  margin-bottom: 2rem;
+}
+.service__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.service__searchbar {
+  display: flex;
+  justify-content: space-between;
+}
+.service__searchbar-field {
+  position: relative;
+  width: 20rem;
+  margin-right: 1rem;
+}
+.service__searchbar-input,
+.service__filters-status-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid var(--dark-blue);
+  border-radius: .25rem;
+  padding-left: 2rem;
+}
+.service__searchbar-input::placeholder,
+.service__filters-status-input::placeholder {
+  color: var(--light-blue);
+  height: 2rem;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: .75rem;
+}
+.service__searchbar-icon {
+  position: absolute;
+  stroke: var(--dark-blue);
+  left: .5rem;
+  top: .5rem;
+}
+.service__searchbar-filters {
+  margin-right: 1rem;
+}
+.service__searchbar-filters-icon,
+.table__header-icon {
+  fill: var(--white);
+}
+.service__loading-icon {
+  stroke: var(--dark-blue);
+  cursor: default;
+}
+.service__filters {
+  background-color: var(--light-grey);
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+}
+.service__filters-form,
+.service__filters-date,
+.service__filters-sum,
+.table__body-list {
+  display: flex;
+}
+.service__filters-item {
+  padding: .5rem 0;
+  margin-right: 1rem;
+}
+.service__filters-item_apply {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.service__filters-date-text,
+.service__filters-status-text,
+.service__filters-sum-text {
+  margin-bottom: .5rem;
+}
+.service__filters-date-wrapper,
+.service__filters-sum-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  width: 9rem;
+  height: 2rem;
+  border: 1px solid var(--dark-blue);
+  border-radius: .25rem;
+  padding: .5rem 0 .5rem .5rem;
+  margin-right: .25rem;
+}
+.service__filters-date-wrapper:last-child,
+.service__filters-sum-wrapper:last-child {
+  margin-right: 0;
+}
+.service__filters-date-input-text,
+.service__filters-sum-input-text {
+  margin-right: .25rem;
+}
+.service__filters-date-input,
+.service__filters-sum-input {
+  border: none;
+  width: 100%;
+}
+.service__filters-date-input::placeholder {
+  color: var(--light-blue);
+}
+.service__filters-clear-button {
+  background-color: transparent;
+  margin: .25rem .4rem 0 0;
+  border: none;
+}
+.service__filters-clear-icon {
+  stroke: var(--light-blue);
+  cursor: pointer;
+}
+.service__filters-status-field {
+  position: relative;
+  width: 12rem;
+}
+.service__filters-status-input {
+  padding: .5rem 2rem .5rem .5rem;
+}
+.service__filters-status-icon {
+  fill: var(--light-blue);
+  cursor: pointer;
+}
+.service__filters-status-button {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  right: .5rem;
+  top: .5rem;
+}
+.service__filters-sum-wrapper {
+  width: 8rem;
+}
+
+
+/* Dropdowns */
+
+
+.dropdown {
+  position: absolute;
+  z-index: 50;
+  top: 2.25rem;
+  right: 0;
+  background-color: var(--white);
+  width: 10rem;
+  padding: 1rem 1rem 0 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 .5rem 1.5rem var(--black-shadow),
+  0 .25rem .5rem var(--black-shadow),
+  0 .125rem .125rem var(--black-shadow);
+}
+.dropdown__list {
+  list-style: none;
+}
+.dropdown__item {
+  margin-bottom: 1rem;
+}
+.dropdown__checkbox-input {
+  display: none;
+}
+.dropdown__checkbox-label {
+  cursor: pointer;
+}
+.dropdown__checkbox-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--light-blue);
+  border-radius: 2px;
+  background-color: var(--white);
+  transition-property: border-color, background-color;
+  transition: .2s ease-out;
+}
+.dropdown__checkbox-icon {
+  position: absolute;
+  fill: var(--white);
+  width: auto;
+}
+.dropdown__checkbox-text {
+  padding-left: 1.5rem;
+}
+.dropdown__checkbox-input:checked + .dropdown__checkbox-group {
+  background-color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+}
+.dropdown__delete{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dropdown__delete-title {
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.dropdown_delete-group {
+  height: 7rem;
+  top: -6.75rem;
+  right: -4.5rem;
+}
+
+
+/* Table */
+
+
+.table {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+}
+.table__header {
+  width: 100%;
+  background-color: var(--dark-blue);
+  flex: 0 0 auto;
+}
+.table__header-list {
+  display: flex;
+  color: var(--white);
+}
+.table__header-wrapper,
+.table__body-wrapper {
+  padding-left: .5rem;
+}
+.table__header-item,
+.table__body-item {
+  display: flex;
+  align-items: center;
+  padding: .75rem .5rem .75rem .5rem;
+}
+.table__header-item-check,
+.table__body-item-check {
+  width: 2rem;
+}
+.table__header-item-number,
+.table__body-item-number {
+  width: 6.75rem;
+}
+.table__header-item-date,
+.table__header-item-status,
+.table__body-item-date,
+.table__body-item-status {
+  width: 11rem;
+}
+.table__header-item-items,
+.table__body-item-items {
+  width: 6rem;
+}
+.table__header-item-sum,
+.table__body-item-sum {
+  width: 8rem;
+}
+.table__header-item-active {
+  background-color: var(--transparency);
+}
+.table__body {
+  width: 100%;
+  flex: 1;
+  overflow-y: scroll;
+}
+.table__body-wrapper {
+  border-bottom: 1px solid var(--light-grey);
+}
+.table__body-status-wrapper {
+  width: 1rem;
+  display: flex;
+  margin-right: .25rem;
+}
+.table__body-status-icon-new,
+.table__body-status-icon-postponed {
+  fill: var(--orange);
+}
+.table__body-status-icon-completed {
+  fill: var(--green);
+}
+.table__body-title-completed {
+  color: var(--green);
+}
+.table__body-status-icon-canceled,
+.table__body-title-canceled {
+  opacity: .5;
+}
+.table__footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--light-grey);
+}
+.table__footer-actions {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 0 .5rem 1rem;
+}
+.table__footer-actions-text {
+  color: var(--dark-blue);
+  margin-right: 1rem;
+}
+.table__footer-actions-icon-change,
+.table__footer-actions-icon-delete {
+  stroke: var(--white);
+  margin-right: .25rem;
+}
+.table__footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+  width: 10.75rem;
+}
+.table__footer-pagination-pages,
+.table__footer-pagination-choose {
+  display: flex;
+  align-items: center;
+}
+.table__footer-pagination-text {
+  color: var(--dark-blue);
+}
