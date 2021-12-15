@@ -52,13 +52,22 @@ function currentSort(state) {
   return state.table.sort;
 }
 
+function isLoading(state) {
+  return state.data.status === 'loading';
+}
+
+function getPaginationData(state) {
+  return state.table.pagination;
+}
+
 const getOrders = createSelector(
-  [orders, getFilters, getSearch],
-  (data, filters, seacrhValue) => {
+  [orders, getFilters, getSearch, getPaginationData],
+  (data, filters, seacrhValue, { page, perPage }) => {
     const {dates, statuses, summs} = filters;
 
+    const orders = page === 'all' ? data : data.slice((page - 1) * perPage, page * perPage);
     if (statuses.length || dates.start || dates.end || summs.min || summs.max || seacrhValue) {
-      return data.filter((order) => {
+      return orders.filter((order) => {
         let result = true;
 
         if (statuses.length) result = statuses.includes(order.status);
@@ -77,7 +86,7 @@ const getOrders = createSelector(
       });
     }
 
-    return data;
+    return orders;
   }
 );
 
@@ -105,7 +114,9 @@ const selectors = {
   getSelectedOrders,
   getSelectedOrdersCount,
   currentSort,
-  getOrder
+  getOrder,
+  isLoading,
+  getPaginationData
 };
 
 export default selectors;

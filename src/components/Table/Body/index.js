@@ -6,6 +6,7 @@ import {Actions, Selectors} from '../../../store';
 import {useMemo} from 'react';
 
 export function Body() {
+  const isLoading = useSelector(Selectors.isLoading);
   const currentSort = useSelector(Selectors.currentSort);
   const orders = useSelector(Selectors.getOrders);
   const selectedOrders = useSelector(Selectors.getSelectedOrders);
@@ -13,11 +14,12 @@ export function Body() {
   const dispatch = useDispatch();
   const onChange = (payload) => dispatch(Actions.selectOrder(payload));
   const onClick = (order, target) => {
-    if (target.closest('.table__cell')) return;
+    if (target.closest('.table__cell-check')) return;
     dispatch(Actions.setOrder({id: order.id, isOpened: true}))
   };
 
   const sortedOrders = useMemo(() => {
+    if (!(orders && orders.length)) return null;
     if (!currentSort.field) return orders;
     const {field, order} = currentSort;
     return [...orders].sort((a, b) => {
@@ -26,6 +28,9 @@ export function Body() {
       return 0;
     });
   }, [currentSort, orders]);
+
+  if (isLoading) return <div className="table__loading-body">Загрузка</div>;
+  if (!sortedOrders) return <div className="table__empty-body">Нет данных</div>;
 
   return (
     <div className="table__body">

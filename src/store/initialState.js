@@ -1,9 +1,8 @@
-import {orderStatuses, orders} from '../mock';
-
 export const initialState = {
   data: {
-    orders,
-    statuses: orderStatuses,
+    orders: [],
+    statuses: [],
+    status: 'loading', // 'loading' | 'success' | 'failed'
   },
   order: {
     id: null,
@@ -28,6 +27,11 @@ export const initialState = {
       field: null, // id | date | status | itemCount | sum | customer
       order: 'asc' // asc | desc
     },
-    selectedRows: []
+    selectedRows: [],
+    pagination: {
+      page: 1, // number | 'all'
+      perPage: 20,
+      pageCount: 0,
+    }
   }
 };

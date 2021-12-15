@@ -163,11 +163,14 @@ svg {
 .button_red:not(:disabled):active {
   background-color: var(--red);
 }
-
 .button_page {
   width: 1.5rem;
-  padding: .25rem .5rem;
-  margin-right: .25rem;
+  height: 1.5rem;
+  padding: 0;
+  margin: 0 .125rem;
+}
+.button_all-page {
+  margin-left: 1rem;
 }
 
 .input {
@@ -427,13 +430,23 @@ svg {
   color: var(--white);
   background-color: var(--dark-blue);
 }
-.table__body {
+.table__body,
+.table__loading-body,
+.table__empty-body {
   flex: 1;
   width: 100%;
   overflow-y: scroll;
 }
 .table__body .table__row:hover {
   background-color: var(--light-grey);
+}
+.table__loading-body,
+.table__empty-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey);
+  font-size: 2rem;
 }
 
 .table__sort-cell {
@@ -558,20 +571,15 @@ svg {
   justify-content: flex-start;
   color: black;
 }
-
 .table__footer-pagination {
   display: flex;
   justify-content: space-between;
-  margin-right: 1rem;
-  width: 10.75rem;
-}
-.table__footer-pagination-pages,
-.table__footer-pagination-choose {
-  display: flex;
   align-items: center;
-}
-.table__footer-pagination-text {
+  margin-right: 0.5rem;
   color: var(--dark-blue);
+}
+.table__footer-pagination-dots {
+  margin: 0 .125rem;
 }
 
 .order__wrapper {
