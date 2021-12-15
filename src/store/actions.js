@@ -1,5 +1,14 @@
 import {initialState} from './initialState';
 
+function setData(state, { payload }) {
+  state.data = payload;
+  state.table.pagination = {
+    ...state.table.pagination,
+    page: 1,
+    pageCount: Math.ceil(payload.orders.length / state.table.pagination.perPage),
+  };
+}
+
 function setSearch(state, { payload }) {
   state.search = payload;
 }
@@ -96,7 +105,12 @@ function alterOrder(state, { payload }) {
   });
 }
 
+function setPage(state, { payload }) {
+  state.table.pagination.page = payload;
+}
+
 const actions = {
+  setData,
   setSearch,
   resetFilters,
   setDateStart,
@@ -112,7 +126,8 @@ const actions = {
   acceptFilters,
   setSort,
   setOrder,
-  alterOrder
+  alterOrder,
+  setPage
 };
 
 export default actions;

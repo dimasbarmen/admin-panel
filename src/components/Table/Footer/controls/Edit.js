@@ -1,11 +1,11 @@
 import {useEffect, useRef, useState} from 'react';
 import {EditIcon} from '../../../../assets/icons/edit';
 import {Button} from '../../../Button';
-import {orderStatuses} from '../../../../mock';
 import {useDispatch, useSelector} from 'react-redux';
 import {Actions, Selectors} from '../../../../store';
 
 export function Edit() {
+  const statuses = useSelector(Selectors.getStatuses);
   const selectedOrdersCount = useSelector(Selectors.getSelectedOrdersCount);
   const [isShow, setIsShow] = useState(false);
   const listRef = useRef(null);
@@ -44,7 +44,7 @@ export function Edit() {
       </Button>
       {isShow && (
         <div className="table__footer-actions-modal table__footer-actions-edit-modal" ref={listRef}>
-          {orderStatuses.map(status => (
+          {statuses.map(status => (
             <Button
               key={status}
               appearance="text"
