@@ -1,0 +1,9 @@
+body {
+  background-color: #E5E5E5;
+}
+.form__wrapper {
+  width: 45rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
